@@ -1,9 +1,10 @@
-import React from 'react';
-import {SafeAreaView, View, StyleSheet, Platform, FlatList} from 'react-native';
+import React, {useContext} from 'react';
+import {SafeAreaView, View, FlatList} from 'react-native';
 import {Searchbar} from 'react-native-paper';
 import styled from 'styled-components';
 import {Spacer} from '../../components/spacer/spacer';
 import {RestaurantInfoCard} from '../restaurants/restaurants-info-card.components';
+import {RestaurantContext} from '../../components/services/restaurants/restaurants.context';
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -19,6 +20,8 @@ const RestaurantList = styled(FlatList).attrs({
 })``;
 
 export const RestaurantsScreen = () => {
+  const {restaurants, isLoading, error} = useContext(RestaurantContext);
+
   return (
     <SafeArea>
       <SearchContainer>
@@ -26,16 +29,16 @@ export const RestaurantsScreen = () => {
       </SearchContainer>
 
       <RestaurantList
-        data={[{name: 1}, {name: 2}, {name: 3}, {name: 4}]}
+        data={restaurants}
         keyExtractor={item => item.name}
-        renderItem={() => (
-          <Spacer pos="bottom" size="large">
-            <RestaurantInfoCard />
-          </Spacer>
-        )}
+        renderItem={({item}) => {
+          return (
+            <Spacer pos="bottom" size="large">
+              <RestaurantInfoCard restaurant={item} />
+            </Spacer>
+          );
+        }}
       />
     </SafeArea>
   );
 };
-
-const styles = StyleSheet.create({});

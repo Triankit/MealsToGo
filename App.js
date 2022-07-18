@@ -7,14 +7,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SafeArea} from './src/components/utility/safe-area.component';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {restaurantRequest} from './src/components/services/restaurants/restaurants.service';
+import {RestaurantContextProvider} from './src/components/services/restaurants/restaurants.context';
+
 const App = () => {
   const TAB_ICON = {
     Restaurants: 'md-restaurant',
     Map: 'md-map',
     Settings: 'md-settings',
   };
-  console.log(restaurantRequest);
+
   const createScreenOptions = ({route}) => {
     const iconName = TAB_ICON[route.name];
     return {
@@ -46,8 +47,8 @@ const App = () => {
   const Tab = createBottomTabNavigator();
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <RestaurantContextProvider>
         <NavigationContainer>
           <Tab.Navigator
             screenOptions={createScreenOptions}
@@ -60,8 +61,8 @@ const App = () => {
             <Tab.Screen name="Settings" component={SettingsScreen} />
           </Tab.Navigator>
         </NavigationContainer>
-      </ThemeProvider>
-    </>
+      </RestaurantContextProvider>
+    </ThemeProvider>
   );
 };
 
