@@ -8,6 +8,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SafeArea} from './src/components/utility/safe-area.component';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {RestaurantContextProvider} from './src/components/services/restaurants/restaurants.context';
+import {LocationContextProvider} from './src/components/services/location/location.context';
 
 const App = () => {
   const TAB_ICON = {
@@ -48,20 +49,22 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <RestaurantContextProvider>
-        <NavigationContainer>
-          <Tab.Navigator
-            screenOptions={createScreenOptions}
-            tabBarOptions={{
-              activeTintColor: 'tomato',
-              inactiveTintColor: 'gray',
-            }}>
-            <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-            <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Settings" component={SettingsScreen} />
-          </Tab.Navigator>
-        </NavigationContainer>
-      </RestaurantContextProvider>
+      <LocationContextProvider>
+        <RestaurantContextProvider>
+          <NavigationContainer>
+            <Tab.Navigator
+              screenOptions={createScreenOptions}
+              tabBarOptions={{
+                activeTintColor: 'tomato',
+                inactiveTintColor: 'gray',
+              }}>
+              <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+              <Tab.Screen name="Map" component={MapScreen} />
+              <Tab.Screen name="Settings" component={SettingsScreen} />
+            </Tab.Navigator>
+          </NavigationContainer>
+        </RestaurantContextProvider>
+      </LocationContextProvider>
     </ThemeProvider>
   );
 };

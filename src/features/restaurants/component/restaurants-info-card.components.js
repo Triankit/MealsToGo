@@ -1,9 +1,9 @@
 import React from 'react';
 import {SvgXml} from 'react-native-svg';
-import star from '../../assets/star';
-import open from '../../assets/open';
-import {Spacer} from '../../components/spacer/spacer';
-import {Text} from '../../components/typography/text.components';
+import star from '../../../assets/star';
+import open from '../../../assets/open';
+import {Spacer} from '../../../components/spacer/spacer';
+import {Text} from '../../../components/typography/text.components';
 import {
   RestaurantCard,
   RestaurantCardCover,
