@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {View} from 'react-native';
 import {Searchbar} from 'react-native-paper';
@@ -6,6 +6,10 @@ import {LocationContext} from '../../../components/services/location/location.co
 
 const SearchContainer = styled(View)`
   padding: ${props => props.theme.space[3]};
+  position: absolute;
+  z-index: 999;
+  top: 47px;
+  width: 100%;
 `;
 
 export const Search = () => {
