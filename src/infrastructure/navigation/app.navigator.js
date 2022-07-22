@@ -2,9 +2,9 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {RestaurantsScreen} from '../../features/screens/restaurants.screen';
 import {SafeArea} from '../../components/utility/safe-area.component';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {RestaurantsNavigator} from './restaurants.navigator';
 export const AppNavigator = () => {
   const Tab = createBottomTabNavigator();
 
@@ -50,7 +50,7 @@ export const AppNavigator = () => {
           activeTintColor: 'tomato',
           inactiveTintColor: 'gray',
         }}>
-        <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+        <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
         <Tab.Screen name="Map" component={MapScreen} />
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
