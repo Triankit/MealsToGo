@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Platform} from 'react-native';
 import styled from 'styled-components';
 import {CompactRestaurantInfo} from '../../../components/restaurant/compact-restaurant-info.component';
 
-const MyText = styled(Text)``;
+const isAndroid = Platform.OS === 'android';
 
 export const MapCallout = ({restaurant}) => {
   return <CompactRestaurantInfo restaurant={restaurant} />;
