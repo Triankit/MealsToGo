@@ -11,7 +11,7 @@ const Map = styled(MapView)`
   width: 100%;
 `;
 
-export const MapScreen = () => {
+export const MapScreen = ({navigation}) => {
   const {location} = useContext(LocationContext);
   const {restaurants = []} = useContext(RestaurantContext);
   const [latDelta, setLatDelta] = useState(0);
@@ -30,7 +30,7 @@ export const MapScreen = () => {
         region={{
           latitude: lat,
           longitude: lng,
-          latitudeDelta: 0.1,
+          latitudeDelta: latDelta,
           longitudeDelta: 0.1,
         }}>
         {restaurants.map(restaurant => {
@@ -42,7 +42,12 @@ export const MapScreen = () => {
                 latitude: restaurant.geometry.location.lat,
                 longitude: restaurant.geometry.location.lng,
               }}>
-              <Callout>
+              <Callout
+                onPress={() =>
+                  navigation.navigate('RestaurantsDetail', {
+                    restaurant,
+                  })
+                }>
                 <MapCallout restaurant={restaurant} />
               </Callout>
             </Marker>
