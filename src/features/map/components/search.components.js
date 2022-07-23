@@ -1,14 +1,16 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
-import {View} from 'react-native';
+import {Platform, View} from 'react-native';
 import {Searchbar} from 'react-native-paper';
 import {LocationContext} from '../../../components/services/location/location.context';
+
+const isAndroid = Platform.OS === 'android';
 
 const SearchContainer = styled(View)`
   padding: ${props => props.theme.space[3]};
   position: absolute;
   z-index: 999;
-  top: 47px;
+  top: ${isAndroid ? 0 : '47px'}
   width: 100%;
 `;
 
