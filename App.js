@@ -13,7 +13,6 @@ const App = () => {
       <FavouritesContextProvider>
         <LocationContextProvider>
           <RestaurantContextProvider>
-            <Text>Hi there</Text>
             <Navigation />
           </RestaurantContextProvider>
         </LocationContextProvider>
