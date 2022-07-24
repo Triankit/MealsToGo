@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Text} from 'react-native';
 import {ThemeProvider} from 'styled-components';
 import {theme} from './src/infrastructure/theme';
 import {RestaurantContextProvider} from './src/components/services/restaurants/restaurants.context';
@@ -12,6 +13,7 @@ const App = () => {
       <FavouritesContextProvider>
         <LocationContextProvider>
           <RestaurantContextProvider>
+            <Text>Hi there</Text>
             <Navigation />
           </RestaurantContextProvider>
         </LocationContextProvider>
