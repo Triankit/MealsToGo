@@ -2,8 +2,8 @@ import React, {useContext, useState, useEffect, Fragment} from 'react';
 import MapView, {Marker, Callout} from 'react-native-maps';
 import styled from 'styled-components';
 import {Search} from '../components/search.components';
-import {LocationContext} from '../../../components/services/location/location.context';
-import {RestaurantContext} from '../../../components/services/restaurants/restaurants.context';
+import {LocationContext} from '../../../services/location/location.context';
+import {RestaurantContext} from '../../../services/restaurants/restaurants.context';
 import {MapCallout} from '../components/map-callout.component';
 
 const Map = styled(MapView)`

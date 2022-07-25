@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import {FavouritesContext} from '../services/favourites/favourites.contex';
+import {FavouritesContext} from '../../services/favourites/favourites.contex';
 
 const FavouriteButton = styled(TouchableOpacity)`
   position: absolute;

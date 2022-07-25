@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "479070224640",
+    "project_id": "mealstogo-d066d",
+    "storage_bucket": "mealstogo-d066d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479070224640:android:cd800aae831d603f2cf3e5",
+        "android_client_info": {
+          "package_name": "com.mealstogo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "479070224640-p363vm7clddllenvp7sj23jqvca1fhce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTmb0CdaUl8yOhX8tw6-WOwhO6CiguDN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "479070224640-p363vm7clddllenvp7sj23jqvca1fhce.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "479070224640-n622en7su3sqcqsd9k1qp5r833vuhbg2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.MealsToGo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
